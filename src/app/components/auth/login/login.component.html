@@ -1,0 +1,33 @@
+<div>
+
+    <mat-card class="loginCard mat-elevation-z8">
+      <div class="example-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-card-title >
+          Iniciar Sesión
+        </mat-card-title>
+        <img mat-card-image class="image" src="assets/kiiwik.png" alt="kiiwik">
+        <mat-card-content>
+         
+        </mat-card-content>
+        <mat-form-field >
+          <input  matInput type="text" formControlName="email" placeholder="Correo electrónico" name="email">
+        </mat-form-field>
+        <mat-form-field >
+          <input  matInput formControlName="password" placeholder="Contraseña" [type]="passwordTypeInput" name="password">
+        </mat-form-field >
+        <div>
+          <button mat-raised-button class="login" expand="block" type="submit" [disabled]="!loginForm.valid"> Iniciar Sesión</button>
+        </div>
+
+        </form>
+      </div>
+
+      <div class="NoCuenta">
+        <h5 routerLink="/register">Crear una cuenta</h5>
+      </div>
+    </mat-card>
+  
+ 
+  
+  </div>

@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: (isHandset$ | async) === false}" [fixedInViewport]="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="titleLogo" ><b>Kiiwik</b></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Tiendas</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Vender</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Productos</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Transacciones</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Clientes</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Usuarios</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Ajustes</a>
+      <a mat-list-item routerLink="/sale">
+        <mat-icon class="counter_product">home</mat-icon>
+        Ayuda</a>
+      <button (click)="onLogOut()">Cerrar Sesion </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="expandToolBar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Kiiwik</span>
+      <span class="spacer"></span>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Vender</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">
+        Tiendas</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Productos</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Transacciones</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Clientes</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Usuarios</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Ajustes</a>
+      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Ayuda</a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
