@@ -4,31 +4,34 @@
     [opened]="(isHandset$ | async) === false">
     <mat-toolbar class="titleLogo" ><b>Kiiwik</b></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/stores">
+        <mat-icon class="counter_product">fastfood</mat-icon>
         Tiendas</a>
       <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+        <mat-icon class="counter_product">local_offer</mat-icon>
         Vender</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/products">
+        <mat-icon class="counter_product">qr_code</mat-icon>
         Productos</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/transactions">
+        <mat-icon class="counter_product">receipt</mat-icon>
         Transacciones</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/clients">
+        <mat-icon class="counter_product">people</mat-icon>
         Clientes</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/users">
+        <mat-icon class="counter_product">supervised_user_circle</mat-icon>
         Usuarios</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/settings">
+        <mat-icon class="counter_product">settings</mat-icon>
         Ajustes</a>
-      <a mat-list-item routerLink="/sale">
-        <mat-icon class="counter_product">home</mat-icon>
+      <a mat-list-item routerLink="/help">
+        <mat-icon class="counter_product">help</mat-icon>
         Ayuda</a>
-      <button (click)="onLogOut()">Cerrar Sesion </button>
+     
+        <mat-divider></mat-divider>
+      <br>  
+      <button mat-raised-button color="warn" class="logout" expand="block" (click)="onLogOut()">Cerrar Sesion </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -39,15 +42,14 @@
       </button>
       <span>Kiiwik</span>
       <span class="spacer"></span>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Vender</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">
-        Tiendas</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Productos</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Transacciones</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Clientes</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Usuarios</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Ajustes</a>
-      <a *ngIf="(isHandset$ | async) === false" style="border-bottom: 1px solid #fff;" routerLink="/sale">Ayuda</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/sale">Vender</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/stores">Tiendas</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/products">Productos</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/transactions">Transacciones</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/clients">Clientes</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/users">Usuarios</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/settings">Ajustes</a>
+      <a *ngIf="(isHandset$ | async) === false" routerLink="/help">Ayuda</a>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

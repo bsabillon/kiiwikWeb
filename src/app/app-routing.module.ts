@@ -9,6 +9,8 @@ import { ProductsHomeComponent } from './components/products/products-home/produ
 import { TransactionsHomeComponent } from './components/transactions/transactions-home/transactions-home.component';
 import { ClientsHomeComponent } from './components/clients/clients-home/clients-home.component';
 import { UsersHomeComponent } from './components/users/users-home/users-home.component';
+import { SettingsHomeComponent } from './components/settings/settings-home/settings-home.component';
+import { HelpHomeComponent } from './components/help/help-home/help-home.component';
 
 
 
@@ -22,7 +24,8 @@ const routes: Routes = [
   { path: 'transactions', component: TransactionsHomeComponent, canActivate: [AuthGuard]  },
   { path: 'clients', component: ClientsHomeComponent, canActivate: [AuthGuard]  },
   { path: 'users', component: UsersHomeComponent, canActivate: [AuthGuard]  },
-
+  { path: 'settings', component: SettingsHomeComponent, canActivate: [AuthGuard]  },
+  { path: 'help', component: HelpHomeComponent, canActivate: [AuthGuard]  },
 
 ];
 

@@ -44,3 +44,9 @@
   transition: border-bottom 0.6s linear;
   -webkit-transition: border-bottom 0.6s linear;
 }
+
+.logout {
+  --border-radius: 18px;
+  width: 80%;
+  margin-left: 10%;
+}
