@@ -1,1 +1,44 @@
-<p>register works!</p>
+<div>
+
+    <mat-card class="loginCard mat-elevation-z8">
+      <div class="example-container">
+        <form [formGroup]="registerAdminForm" (ngSubmit)="onRegister()">
+        <mat-card-title >
+            <h2>¡Bienvenido!</h2>
+        </mat-card-title>
+        <mat-card-content>
+         
+        </mat-card-content>
+        <mat-form-field expand="block" >
+          <input  matInput type="text" formControlName="name" placeholder="Nombre" name="name">
+        </mat-form-field>
+    
+        <mat-form-field expand="block">
+            <input matInput formControlName="email" placeholder="Correo electrónico" type="text" name="email">
+        </mat-form-field >
+
+        <mat-form-field expand="block">
+          <input matInput formControlName="password" placeholder="Contraseña" [type]="passwordTypeInput" name="password">
+        </mat-form-field >
+
+        <mat-form-field expand="block">
+            <input matInput formControlName="company" placeholder="Nombre Comercial (Tienda)" type="text" name="store">
+        </mat-form-field >
+
+
+
+        <div>
+          <button color="primary" mat-raised-button class="login" expand="block" type="submit" [disabled]="!registerAdminForm.valid"> Registrarse</button>
+        </div>
+
+        </form>
+      </div>
+
+      <div class="NoCuenta">
+        <h5 routerLink="/auth/login">Ya tengo una cuenta</h5>
+      </div>
+    </mat-card>
+  
+ 
+  
+  </div>

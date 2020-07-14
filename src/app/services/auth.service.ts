@@ -37,12 +37,33 @@ export class AuthService {
     return this.afAuth.authState.pipe(map(auth => auth));
   }
 
+  registerUser(value) {
+    return new Promise<any>((resolve, reject) => {
+      this.afAuth.createUserWithEmailAndPassword(value.email, value.password).then(
+        res => resolve(res),
+        err => reject(err),
+      );
+    });
+  }
+
+  passwordRecovery(email) {
+    return this.afAuth.sendPasswordResetEmail(email);
+  }
+
   createUser(record) {
     return this.afs.collection('users').doc(record.uid).set(record);
   }
 
+  createStore(record) {
+    return this.afs.collection('stores').add(record);
+  }
+
   getUser(email) {
     return this.afs.collection('users', ref => ref.where('email', '==', `${email}`)).snapshotChanges();
+  }
+
+  getActiveStore(uidStore) {
+    return this.afs.collection('stores').doc(uidStore).valueChanges();
   }
 
   loginUser(value) {
@@ -64,6 +85,7 @@ export class AuthService {
     this.afAuth.authState.subscribe((authUser)=>{
       this.getUserByUid(authUser.uid).subscribe((FSuser)=>{
          this.currentUser  = FSuser; 
+         //console.log(this.currentUser);
          return this.currentUser;
       })
     }

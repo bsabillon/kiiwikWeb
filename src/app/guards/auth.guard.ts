@@ -10,6 +10,8 @@ import { take, map, tap } from 'rxjs/operators';
 })
 export class AuthGuard implements CanActivate {
   constructor(private afsAuth: AngularFireAuth, private router: Router) { }
+
+  
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {

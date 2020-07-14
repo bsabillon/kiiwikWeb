@@ -1,1 +1,44 @@
-<p>products-home works!</p>
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Articulos">
+        <mat-grid-list [cols]="breakpoint" rowHeight="2:2.7" (window:resize)="onResize($event)">
+            <ng-container>
+              <mat-grid-tile *ngFor="let product of products; let i = index">
+                <mat-card class="bodyCards">
+                  <h5 class="card_title">{{product.name}}</h5>
+                  <h5 class="card_subTitle">{{product.description}}</h5>
+                  <div class="card_img">
+                    <img src="../../../../assets/product.png" alt="photo">
+                  </div>
+                  <div class="divInlineContainer">
+                    <div class="divInline">
+                      <p class="card_text">{{product.price | currency: 'L '}}</p>
+                      <p class="counter">
+                        <mat-icon class="counter_product" (click)="minusCuantity(i)">remove_circle</mat-icon> {{product.stock}}
+                        <mat-icon class="counter_product" (click)="addCuantity(i)">
+                          add_circle</mat-icon>
+                      </p>
+                    </div>
+                    <div class="divInline">
+                      <button mat-raised-button color="primary">Editar <mat-icon>
+                          edit</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                </mat-card>
+              </mat-grid-tile>
+            </ng-container>
+          </mat-grid-list>
+
+
+
+
+
+    </mat-tab>
+
+
+
+
+
+    <mat-tab label="Inventario">Inventario</mat-tab>
+    <mat-tab label="Categorias">Categorias</mat-tab>
+</mat-tab-group>

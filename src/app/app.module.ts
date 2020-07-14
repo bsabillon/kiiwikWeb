@@ -16,6 +16,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -50,14 +53,15 @@ import { SettingsHomeComponent } from './components/settings/settings-home/setti
     ClientsHomeComponent,
     UsersHomeComponent,
     HelpHomeComponent,
-    SettingsHomeComponent
+    SettingsHomeComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,  ReactiveFormsModule,FormsModule,
     BrowserAnimationsModule,MatToolbarModule,MatButtonModule,MatIconModule,MatCardModule,MatFormFieldModule,MatInputModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,AngularFireAuthModule,AngularFireDatabaseModule, LayoutModule, MatSidenavModule, MatListModule
+    AngularFirestoreModule,AngularFireAuthModule,AngularFireDatabaseModule, LayoutModule, MatSidenavModule, MatListModule, MatTabsModule,MatGridListModule,MatSnackBarModule
   ],
   providers: [AngularFirestore,AngularFireAuth],
   bootstrap: [AppComponent]
