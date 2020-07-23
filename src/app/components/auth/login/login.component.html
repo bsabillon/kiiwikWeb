@@ -10,12 +10,17 @@
         <mat-card-content>
          
         </mat-card-content>
-        <mat-form-field expand="block" >
-          <input  matInput type="text" formControlName="email" placeholder="Correo electrónico" name="email">
-        </mat-form-field>
-        <mat-form-field expand="block">
-          <input matInput formControlName="password" placeholder="Contraseña" [type]="passwordTypeInput" name="password">
-        </mat-form-field >
+        <div class="itemsInputs">
+          <mat-form-field expand="block" >
+            <input   matInput type="text" formControlName="email" placeholder="Correo electrónico" name="email">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field expand="block">
+            <input matInput formControlName="password" placeholder="Contraseña" [type]="passwordTypeInput" name="password">
+          </mat-form-field >
+        </div>
+
         <div>
           <button color="primary" mat-raised-button class="login" expand="block" type="submit" [disabled]="!loginForm.valid"> Iniciar Sesión</button>
         </div>

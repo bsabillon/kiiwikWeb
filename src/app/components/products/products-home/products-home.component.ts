@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -27,10 +27,14 @@ export class ProductsHomeComponent implements OnInit {
   ) { }
   public  products: any=  [];
   public currentUser;
-  productsStock: any = [];
+  productsStocks: any = [];
+  productsByCategory: any =[];
+  categories: any = [];
+  activeCategory = '';
   breakpoint: any;
   public searchText = '';
   public userUid: string = null;
+  getCategoriesSubscription: Subscription;
   control: FormControl = new FormControl('');
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -41,11 +45,28 @@ export class ProductsHomeComponent implements OnInit {
   ngOnInit() {
   this.getCurrentUser();
   this.getProducts();
+  this.getCategories();
   this.breakpoint = (window.innerWidth <= 600) ? 1 : (window.innerWidth <= 850) ? 2 : (window.innerWidth <= 1050) ? 3 : 4;
   }
 
   onResize(event) {
     this.breakpoint = (window.innerWidth <= 600) ? 1 : (window.innerWidth <= 850) ? 2 : (window.innerWidth <= 1050) ? 3 : 4;
+  }
+
+  getCategories() {
+      this.getCategoriesSubscription = this.productService.getCategories(this.currentUser.activeStoreUid).subscribe(data => {
+        let categories = {};
+        categories = data.map(e => {
+          return {
+            uid: e.payload.doc.id,
+            name: e.payload.doc.data()['name'],
+            storeUid: e.payload.doc.data()['storeUid'],
+          };
+        });
+        this.categories = categories;
+        console.log(this.categories); 
+      });
+
   }
 
   getProducts(){
@@ -67,7 +88,7 @@ export class ProductsHomeComponent implements OnInit {
           };
         });
         this.products = products;
-        this.productsStock = this.products.filter(element => element.stock > 0);
+        this.productsStocks = this.products.filter(element => element.stock > 0);
       });
     this.breakpoint = (window.innerWidth <= 600) ? 1 : (window.innerWidth <= 850) ? 2 : (window.innerWidth <= 1050) ? 3 : 4;
 

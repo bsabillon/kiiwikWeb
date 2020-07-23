@@ -37,6 +37,8 @@ import { ClientsHomeComponent } from './components/clients/clients-home/clients-
 import { UsersHomeComponent } from './components/users/users-home/users-home.component';
 import { HelpHomeComponent } from './components/help/help-home/help-home.component';
 import { SettingsHomeComponent } from './components/settings/settings-home/settings-home.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { SettingsHomeComponent } from './components/settings/settings-home/setti
     UsersHomeComponent,
     HelpHomeComponent,
     SettingsHomeComponent,
+    ProductsListComponent,
+    FilterPipe,
  
   ],
   imports: [

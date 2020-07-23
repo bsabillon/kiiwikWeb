@@ -1,0 +1,98 @@
+  .bodyCards {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 15px;
+    background: linear-gradient(to bottom left, #fdfefe 40%, rgb(248, 249, 249) 100%);
+  }
+  
+  .card_title {
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    text-align: center;
+    /* margin: 0px; */
+  }
+  
+  .card_subTitle {
+    color: #7B7D7D;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    text-align: center;
+  }
+  
+  .card_text {
+    margin-top: -3px;
+    color: #000;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+    text-align: left;
+  }
+  
+  .divInline {
+    float: left;
+  }
+  
+  .divInlineContainer > div {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+  
+  .searchBar {
+    width: 100%;
+    display: flex;
+
+  }
+  
+  .wrap {
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #3498db;
+    background: #3498db;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  body {
+    background: #f2f2f2;
+    font-family: "Open Sans", sans-serif;
+  }
+  .searchTerm {
+    width: 100%;
+    border: 2px solid #000;
+     border: 3px solid #3498db;
+    padding: 5px;
+ 
+    height: 35px;
+    border-radius: 8px;
+    outline: none;
+    color: #9dbfaf;
+  }
+  
+  .searchTerm:focus {
+    color: #000;
+  }
+
+  .header-image {
+    background-image: url('../../../../assets/user.png');
+    background-size: cover;
+  }

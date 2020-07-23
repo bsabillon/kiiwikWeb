@@ -139,24 +139,14 @@
     margin-left: 10%;
   }
   
-  .itemsInputs {
-    --background: rgba(255, 255, 255, 0);
-    z-index: 2;
-  }
-  
-  .itemsInputs > ion-item {
+  .itemsInputs > {
     --background: rgba(27, 103, 150, 0.126);
+    display: flex;
     width: 96%;
     margin-left: 2%;
     margin-bottom: 10px;
     border-radius: 15px;
     padding: 2px;
-  }
-  
-  .itemsInputs > ion-item > ion-icon {
-    margin-left: 4px;
-    margin-right: 4px;
-    color: #3880ff;
   }
   
   .NoCuenta > h6:focus {
