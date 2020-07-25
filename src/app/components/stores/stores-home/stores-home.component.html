@@ -1,1 +1,30 @@
-<p>stores-home works!</p>
+<mat-grid-list [cols]="breakpoint" rowHeight="2:2.7" (window:resize)="onResize($event)">
+    <ng-container>
+        <mat-toolbar class="searchBar" >
+            <input matInput type="text" class="searchTerm" [(ngModel)]="searchText" placeholder="Buscar...">
+            <button mat-raised-button>Agregar</button>
+        </mat-toolbar>
+      <mat-grid-tile *ngFor="let store of stores | filter: searchText; let i = index">
+        <mat-card class="bodyCards">
+            <mat-card-header>
+                <div mat-card-avatar class="header-image"></div>
+                <mat-card-title> <h5 class="card_title">{{store.storeName}}</h5></mat-card-title>
+                <mat-card-subtitle> <h5 class="card_subTitle"></h5></mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+          <mat-card-content>
+            <div>
+                <p></p>
+                <p class="card_text"> <b>Fecha: </b> </p>
+              
+            </div>
+          </mat-card-content>
+          <div class="divInlineContainer">
+            <div class="divInline">
+              <button mat-raised-button color="primary">Editar <mat-icon>edit</mat-icon></button>
+            </div>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </ng-container>
+  </mat-grid-list>

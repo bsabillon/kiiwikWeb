@@ -13,7 +13,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./clients-home.component.css']
 })
 export class ClientsHomeComponent implements OnInit {
-  getClientsSubscription: Subscription;
+  //getClientsSubscription: Subscription;
   clients: any = [];
   public currentUser;
 
@@ -43,7 +43,7 @@ export class ClientsHomeComponent implements OnInit {
   }
 
   getClients() {
-      this.getClientsSubscription = this.clientsService.getClients(this.currentUser.activeStoreUid).subscribe(data => {
+      this.clientsService.getClients(this.currentUser.activeStoreUid).subscribe(data => {
         let clients = {};
         clients = data.map(e => {
           return {

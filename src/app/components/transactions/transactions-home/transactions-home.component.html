@@ -4,20 +4,19 @@
             <input matInput type="text" class="searchTerm" [(ngModel)]="searchText" placeholder="Buscar...">
             <button mat-raised-button>Agregar</button>
         </mat-toolbar>
-      <mat-grid-tile *ngFor="let client of clients | filter: searchText; let i = index">
+      <mat-grid-tile *ngFor="let transaction of transactions | filter: searchText; let i = index">
         <mat-card class="bodyCards">
             <mat-card-header>
                 <div mat-card-avatar class="header-image"></div>
-                <mat-card-title> <h5 class="card_title">{{client.clientName}}</h5></mat-card-title>
-                <mat-card-subtitle> <h5 class="card_subTitle">{{client.clientPhone}}</h5></mat-card-subtitle>
+                <mat-card-title> <h5 class="card_title">{{transaction.clientName}}</h5></mat-card-title>
+                <mat-card-subtitle> <h5 class="card_subTitle">{{transaction.orderUid}}</h5></mat-card-subtitle>
             </mat-card-header>
             <mat-divider></mat-divider>
           <mat-card-content>
             <div>
                 <p></p>
-                <p class="card_text"> <b>ID: </b> {{client.clientID}}</p>
-                <p class="card_text"> <b>RTN: </b> {{client.clientRTN}}</p>
-                <p class="card_text"> <b>Correo Electrónico: </b> {{client.clientEmail}}</p>
+                <p class="card_text"> <b>Fecha: </b> {{transaction.date}}</p>
+              
             </div>
           </mat-card-content>
           <div class="divInlineContainer">

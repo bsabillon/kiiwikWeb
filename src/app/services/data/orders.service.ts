@@ -9,7 +9,7 @@ export class OrdersService {
   constructor(private afs: AngularFirestore,) { }
 
   getOrders(storeUid) {
-    return this.afs.collection('orders', ref => ref.where('storeUid', '==', `${storeUid}`) && ref.orderBy('dateFlag', 'desc')).snapshotChanges();
+    return this.afs.collection('orders', ref => ref.where('storeUid', '==', `${storeUid}`) ).snapshotChanges();
   }
 
   getOrder(orderUid) {
